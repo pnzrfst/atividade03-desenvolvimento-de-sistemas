@@ -6,3 +6,17 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Developer{
+  id         String   @id
+  name       String
+  bio        String
+  techs      String[]
+  github_url String
+  avatar_url String
+  isActive   Boolean
+  created_at DateTime
+  updated_at DateTime
+
+  @@map("devs")
+}
